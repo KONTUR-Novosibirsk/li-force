@@ -1,0 +1,26 @@
+@use "/resources/scss/common/variables";
+
+.delivery{
+    &__content{
+        margin-bottom: 90px;
+        a{
+            color: variables.$AdditionalColorText;
+            text-decoration: underline;
+            text-decoration-style: solid;
+            text-decoration-thickness: 5.5%;
+            text-decoration-skip-ink: none;
+
+        }
+        p{
+            font-size: 18px;
+            font-weight: 500;
+            color: variables.$SecondColorText;
+            margin-bottom: 20px;
+
+            strong{
+                font-size: 22px;
+                font-weight: 700;
+            }
+        }
+    }
+}

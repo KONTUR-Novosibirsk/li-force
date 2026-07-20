@@ -1,0 +1,28 @@
+@media (max-width: 1150px) {
+    .configurator__content-right{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 767px) {
+    .configurator__heading{
+        flex-direction: column;
+        gap: 20px;
+
+        button{
+            width: 100%;
+        }
+
+    }
+    .configurator__content-left{
+        display: none;
+    }
+
+    #configurator-left{
+        padding: 0;
+    }
+    .configurator__content-right{
+        padding-left: 0;
+        font-size: 14px;
+    }
+}

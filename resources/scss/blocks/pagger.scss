@@ -1,0 +1,37 @@
+@use '/resources/scss/common/variables';
+
+.pagger {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        list-style-type: none;
+        padding-left: 0;
+        margin-top: 50px;
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: variables.$FontFamily;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            width: 48px;
+            height: 48px;
+            border-radius: 1px;
+            border: 1px solid #D6D6D6;
+            margin-bottom: 12px;
+            margin-right: 12px;
+        }
+        li:first-child,
+        li:last-child{
+            border: none;
+        }
+        li.active {
+            background-color: variables.$MainColorText;
+            color: #FFF;
+        }
+    }
+}

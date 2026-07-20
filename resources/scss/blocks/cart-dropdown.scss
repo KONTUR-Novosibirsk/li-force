@@ -1,0 +1,83 @@
+@use "/resources/scss/common/variables";
+
+.cart-dropdown{
+    width: 426px;
+    background: #F3F3F3;
+    border-radius: 18px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &__item{
+        background: #FFFFFF;
+        border-radius: 18px;
+        padding: 8px;
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        gap: 12px;
+        &-img{
+            border-radius: 12px;
+            overflow: hidden;
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        &-ttl{
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 22px;
+            color: rgba(0, 0, 0, 0.88);
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            margin-bottom: 4px;
+        }
+        &-price{
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+            color: variables.$AdditionalColorText;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            span{
+                display: inline-block;
+                background: rgba(0, 0, 0, 0.15);
+                border-radius: 8px;
+                min-width: 32px;
+                padding: 4px;
+                text-align: center;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 24px;
+                color: rgba(0, 0, 0, 0.88);
+            }
+
+        }
+
+    }
+    &__btn{
+        display: block;
+        width: 100%;
+        border-radius: 8px;
+        padding: 8px 0;
+        text-align: center;
+        font-size: 16px;
+        line-height: 24px;
+        color: #FFF;
+        background: variables.$AdditionalColorText;
+        transition: all 0.3s ease;
+
+        &:hover {
+            color: #FFF;
+            background: variables.$HoverColor;
+        }
+    }
+
+}

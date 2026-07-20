@@ -1,0 +1,99 @@
+@use "/resources/scss/common/variables";
+
+@media (max-width: 1400px) {
+    .acc-history__item-header,
+    .acc-history__item-body-top,
+    .acc-history__product,
+    .acc-history__product-left{
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 1150px) {
+    .account{
+        flex-direction: column;
+    }
+
+    .account .profile-items{
+        width: 100%;
+    }
+    .account .profile-items-content{
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .personal-data form{
+        grid-template-columns: 1fr;
+    }
+    .personal-data__message,
+    .personal-data__success-message{
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .personal-page{
+        padding-bottom: 60px;
+    }
+    .account{
+        gap: 20px;
+    }
+    .personal-data{
+        padding: 20px;
+        margin-bottom: 0;
+    }
+    .personal-data__heading,
+    .acc-history__title                    {
+        font-size: 20px;
+        line-height: 27px;
+        margin-bottom: 12px;
+    }
+    .personal-data form{
+        row-gap: 12px;
+    }
+    .personal-data .confirm-btn{
+        margin-top: 0;
+    }
+    .acc-history{
+        padding-bottom: 0;
+    }
+    .acc-history__items{
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    .acc-history__item-header{
+        gap: 15px;
+        padding: 20px;
+    }
+    .acc-history__item-right{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .acc-history__total{
+        margin-right: 0;
+    }
+
+    .acc-history__item-body-top{
+        border-top: none;
+        padding: 0 20px;
+        gap: 15px;
+    }
+    .acc-history__product{
+        gap: 8px;
+        padding: 20px;
+    }
+    .acc-history__product:first-child{
+        border-top: none;
+    }
+    .acc-history__product-left{
+        gap: 8px;
+    }
+    .acc-history__product-right{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}

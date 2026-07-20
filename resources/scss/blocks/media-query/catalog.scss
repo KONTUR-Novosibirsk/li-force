@@ -1,0 +1,151 @@
+@use '/resources/scss/common/variables';
+
+@media (max-width: 1300px) {
+    .products-content_left {
+        flex: 0 0 285px;
+    }
+    .products-content_right {
+        flex: 0 0 calc(100% - 310px);
+    }
+    .products-list{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+    .products-item{
+        padding: 18px;
+    }
+    .products-item__buttons{
+        gap: 8px;
+    }
+    .products-item__btn{
+        font-size: 14px;
+    }
+    //.products-content_right {
+    //    flex: 0 0 100%;
+    //}
+
+    //.products-item {
+    //    flex: 0 0 calc(25% - 14px);
+    //}
+    //
+    //.products-filter__btn_mobile {
+    //    display: block;
+    //}
+}
+
+@media (max-width: 1100px) {
+    .products-content{
+        flex-direction: column;
+    }
+
+    .products-filter__btn_mobile {
+        display: flex;
+    }
+    .products-content_left {
+        //display: none;
+        flex: unset;
+        width: 100%;
+
+        h3{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+
+            &:after{
+                content:'';
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                background: no-repeat center/cover url("/resources/images/heading-arrow.svg");
+                transform: rotate(90deg);
+                transition: variables.$time;
+            }
+        }
+        h3.active::after{
+            transform: rotate(-90deg) ;
+        }
+    }
+    .products-menu{
+        display: none;
+    }
+
+    .products-content_right {
+        flex: 0 0 100%;
+    }
+    .products-list{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+    .products-filter-tags__item{
+        padding: 11px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .products-head{
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .products-item{
+        position: relative;
+        padding: 10px 12px;
+        border-radius: 12px;
+        border-width: 2px;
+
+        .select-btn,
+        .selected-btn{
+            position: absolute;
+            top: 10px;
+            right: 12px;
+            width: 30px;
+            height: 30px;
+            padding: 6px;
+            z-index: 1;
+            svg{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .compare-btn,
+        .compared-btn,
+        .compared__delete-item{
+            position: absolute;
+            top: 45px;
+            right: 12px;
+            width: 30px;
+            height: 30px;
+            padding: 6px;
+            svg{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &__title a{
+            font-size: 14px;
+            line-height: 100%;
+        }
+
+        &__price{
+            flex-direction: column-reverse;
+            align-items: flex-start;
+
+            &_new{
+                font-size: 16px;
+            }
+        }
+
+        &__btn{
+            font-size: 16px;
+            height: 40px;
+        }
+        .product-tag{
+            padding: 3px 10px;
+            top: 10px;
+            left: 12px;
+        }
+    }
+
+}

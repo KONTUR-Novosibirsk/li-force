@@ -1,0 +1,84 @@
+<?php
+
+namespace Galtsevt\AppConf\app\Services;
+
+class FormElementsContainer
+{
+    protected string $key;
+
+    protected string $name;
+
+    protected bool $visible;
+
+    protected array $formElements;
+
+    protected array $allValidationRules;
+
+    protected ?string $groupName = null;
+
+    protected int $sort = 0;
+
+    public function __construct(string $key, string $name, ?callable $visible, array $elements, ?string $groupName = null, int $sort = 0)
+    {
+        $this->key = $key;
+        $this->name = $name;
+        $this->groupName = $groupName;
+        $this->sort = $sort;
+        $this->visible = is_callable($visible) ? call_user_func($visible) : true;
+        $this->createFormElements($elements);
+    }
+
+    private function createFormElements(array $elements): void
+    {
+        foreach ($elements as $key => $item) {
+            $formElementType = '\Galtsevt\AppConf\app\Services\FormElementTypes\\'.ucfirst($item['type'] ?? 'input');
+            $this->formElements[$key] = new $formElementType($key, $item);
+            $this->formElements[$key]->setGroupName($this->groupName);
+        }
+    }
+
+    public function beforeSave(array &$data): void
+    {
+        foreach ($this->formElements as $formElement) {
+            if (isset($data[$formElement->getName()])) {
+                $data[$formElement->getName()] = $formElement->beforeSave($data[$formElement->getName()]);
+            }
+        }
+    }
+
+    public function getAllValidationRules(): array
+    {
+        foreach ($this->formElements as $element) {
+            if ($element->isVisible()) {
+                $this->allValidationRules[$element->getName()] = $element->getRules();
+            }
+        }
+
+        return $this->allValidationRules;
+    }
+
+    public function getFormElements(): array
+    {
+        return $this->formElements ?? [];
+    }
+
+    public function getKey(): string
+    {
+        return $this->key;
+    }
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    public function getSort(): int
+    {
+        return $this->sort;
+    }
+
+    public function isVisible(): bool
+    {
+        return $this->visible;
+    }
+}

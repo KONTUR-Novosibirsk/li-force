@@ -1,0 +1,32 @@
+@media (max-width: 1200px) {
+    .news {
+        padding-bottom: 40px;
+    }
+    .news-list{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .news-item__img {
+        height: 150px;
+    }
+    .news-sorter{
+        margin-bottom: 9px;
+    }
+    .news-sorter-btn{
+        padding: 11px 20px;
+    }
+    .news-list{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .news-swiper_btns{
+        display: none;
+    }
+    .news-list{
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,287 @@
+@use '/resources/scss/common/variables';
+
+.footer {
+    background: #F2F2F2;
+
+
+    &_top{
+        padding: 82px 0 40px;
+        display: flex;
+        justify-content: space-between;
+        gap: 70px;
+
+    }
+    &__contacts{
+        width: 100%;
+        max-width: 362px;
+        //flex-shrink: 0;
+        .logo{
+            width: 100%;
+            display: block;
+            margin-bottom: 24px;
+
+            img{
+                width: 100%;
+            }
+        }
+        &-btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 11px 32px;
+            border-radius: 4px;
+            background: variables.$AdditionalColorText;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: normal;
+            color: #FFF;
+            margin-bottom: 24px;
+        }
+    }
+
+    &__feedback{
+        max-width: 907px;
+
+        &-form{
+            .feedback-popup__heading,
+            .feedback-popup__heading ~ p{
+                display: none;
+            }
+
+            form{
+                display: flex;
+                flex-wrap: wrap;
+                column-gap: 20px;
+            }
+            .feedback-popup__items{
+                display: flex;
+                flex-wrap: wrap;
+                column-gap: 20px;
+            }
+            .feedback-popup__item{
+                width: 217px;
+                flex-grow: 1;
+
+                input{
+                    background: #FFFFFF;
+                    border: 1px solid #EDEDED;
+                }
+            }
+            .feedback-popup__content .feedback-btn{
+                width: 194px;
+                height: 50px;
+            }
+            .feedback-popup__privacy{
+                width: 100%;
+                margin-bottom: 28px;
+                user-select: none;
+                a{
+                    text-decoration: none;
+                }
+
+                .checkbox-wrap{
+                    label{
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 2px;
+                        background: variables.$MainColorText;
+                        border-color: variables.$MainColorText;
+                    }
+                    input[type=checkbox]:checked ~ span{
+                        background: variables.$MainColorText;
+                    }
+                }
+            }
+
+        }
+    }
+
+    &_bottom{
+        padding-bottom: 100px;
+
+        &-content{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20.48px;
+            column-gap: 40px;
+            row-gap: 20px;
+        }
+    }
+}
+
+.footer-phone,
+.footer-email{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18.9px;
+
+    svg {
+        width: 19px;
+        flex-shrink: 0;
+    }
+
+}
+.footer-phone{
+    margin-bottom: 32px;
+}
+.footer-email{
+    margin-bottom: 20px;
+}
+.footer-catalog{
+    .menu{
+        > li{
+            > a{
+                font-weight: 700;
+                font-size: 16px;
+                line-height: normal;
+            }
+            .has-sub-menu-arrow{
+                display: none;
+            }
+            .sub-menu{
+                margin-top: 12px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 16px;
+
+                li{
+                    margin-bottom: 0;
+                    a{
+                        color: variables.$SecondColorText;
+                        font-size: 16px;
+                        font-weight: 500;
+                    }
+                    svg{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+.footer-menu{
+    width: 220px;
+    flex-shrink: 0;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: normal;
+
+    .menu{
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        margin-top: 20px;
+
+        li{
+            margin-bottom: 0;
+        }
+
+        > li > a{
+            font-weight: 400;
+            font-size: 14px;
+            color: variables.$SecondColorText;
+        }
+    }
+}
+.footer-copyright{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: variables.$SecondColorText;
+}
+.footer-contur {
+    width: 234px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__left {
+        .contur-link {
+            font-size: 14px;
+            font-family: variables.$FontFamily;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            color: variables.$SecondColorText;
+            transition: all 0.3s ease;
+        }
+
+        .contur-link:hover {
+            color: gray;
+        }
+
+        .contur-link:not(:last-child) {
+            margin-bottom: 2px;
+            text-decoration: underline;
+            text-underline-offset: 1px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: rgba(83, 83, 83, 0.5);
+            text-decoration-skip-ink: none;
+        }
+    }
+
+    &__right {
+    }
+}
+.footer-links{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 69px;
+    row-gap: 20px;
+    margin-top: 28px;
+    max-width: 348px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: normal;
+
+
+    &__items{
+        width: max-content;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 9px;
+        margin-top: 16px;
+    }
+
+    a{
+        filter: grayscale(1);
+        transition: .3s ease;
+
+        svg{
+            rect{
+                fill: #4D4D4D;
+                transition: .3s ease;
+            }
+        }
+
+        &:hover{
+            filter: grayscale(0);
+        }
+    }
+    a.ozon:hover svg rect {
+        fill: #0075BE;
+    }
+    a.wb:hover svg rect {
+        fill: url(#paint0_linear_1437_7162);
+    }
+    a.yandex:hover svg rect {
+        fill: #FF4112;
+    }
+    a.vk:hover svg rect {
+        fill: #0077FF;
+    }
+    a.tg:hover svg rect {
+        fill: #039BE5;
+    }
+    a.dzen:hover svg rect {
+        fill: #202022;
+    }
+}

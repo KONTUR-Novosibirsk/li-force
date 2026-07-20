@@ -1,0 +1,15 @@
+@media (max-width: 1150px) {
+    .feedback_container{
+        grid-template-columns: 1fr;
+    }
+    .feedback-config{
+        min-width: auto;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 567px) {
+    .feedback-config__fields{
+        grid-template-columns: 1fr;
+    }
+}

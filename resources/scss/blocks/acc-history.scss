@@ -1,0 +1,564 @@
+@use "/resources/scss/common/variables";
+
+.acc-history{
+    flex-grow: 1;
+    padding-bottom: 100px;
+
+    &__title{
+        span{
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+            color: rgba(0, 0, 0, 0.45);
+            padding-left: 8px;
+        }
+    }
+    &__item{
+        background: #FFFFFF;
+        border-radius: 18px;
+        margin-bottom: 24px;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        padding: 18px;
+
+        &-header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            padding-bottom: 20px;
+        }
+
+        &-left{
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        &-btns{
+            display: flex;
+            gap: 20px;
+
+            button{
+                border-radius: 6px;
+                padding: 5px 15px;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 22px;
+                border: 1px solid rgba(217, 217, 217, 1);
+                box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.02);
+
+                &:first-child{
+                    background: variables.$AdditionalColorText;
+                    color: #FFFFFF;
+                }
+            }
+
+        }
+    }
+}
+
+.acc-history__numb{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
+.acc-history__status{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1;
+    padding: 3px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+.status-pending{
+    border: 1px solid rgba(255, 173, 210, 1);
+    background: rgba(255, 240, 246, 1);
+    color: rgba(235, 47, 150, 1);
+}
+.status-assembly{
+    border-color: rgba(173, 198, 255, 1);
+    color: rgba(47, 84, 235, 1);
+    background: rgba(240, 245, 255, 1);
+}
+.status-delivered{
+    border-color: rgba(140, 224, 139, 1);
+    color:rgba(53, 140, 49, 1);
+    background: rgba(215, 255, 214, 1);
+}
+.acc-history__total{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    color: rgba(0, 0, 0, 0.88);
+    margin-bottom: 4px;
+}
+.acc-history__date{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    color: rgba(0, 0, 0, 0.45);
+}
+.error-text{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: rgba(255, 77, 79, 1);
+    margin-top: 4px;
+}
+.acc-history__arrow{
+    margin-left: auto;
+    cursor: pointer;
+    transition: variables.$time;
+    position: absolute;
+    top: 27px;
+    right: 30px;
+
+    &.active{
+        transform: rotate(-180deg);
+
+        svg path{
+            stroke: variables.$AdditionalColorText;
+        }
+    }
+}
+
+
+.acc-history__item-body{
+    &-top{
+        border-top: 1px solid #EBEBEB;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 96px;
+        padding: 20px 0;
+    }
+    &-products{
+        display: flex;
+        gap: 14px;
+        justify-content: flex-end;
+    }
+}
+.acc-history__address{
+    font-weight: 600;
+
+    span{
+        font-size: 14px;
+        font-weight: 400;
+        color: #535353;
+        display: block;
+        margin-bottom: 7px;
+    }
+}
+.acc-history__payment{
+    width: 360px;
+    font-weight: 600;
+
+    span{
+        font-size: 14px;
+        font-weight: 400;
+        color: #535353;
+        display: block;
+        margin-bottom: 7px;
+    }
+}
+.acc-history__product{
+    &-img{
+        width: 80px;
+        height: 80px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        overflow: hidden;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &-info{
+        font-size: 14px;
+        font-weight: 600;
+        max-width: 300px;
+
+        .product-price{
+            font-size: 18px;
+            font-weight: 800;
+            color: variables.$AdditionalColorText;
+            margin-top: 11px;
+        }
+    }
+    &-count{
+        font-size: 14px;
+        font-weight: 500;
+        color: #535353;
+
+        span{
+            font-weight: 600;
+            font-size: 16px;
+            color: variables.$MainColorText;
+            display: block;
+            margin-top: 5px;
+        }
+    }
+    &-total{
+        font-size: 14px;
+        font-weight: 500;
+        color: #535353;
+
+        span{
+            font-weight: 600;
+            font-size: 16px;
+            color: variables.$MainColorText;
+            display: block;
+            margin-top: 5px;
+        }
+    }
+    .product-price{
+        margin-bottom: 0;
+    }
+}
+
+
+.acc-history__filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.acc-history__filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 180px;
+    flex-grow: 1;
+    width: calc(33% - 10px);
+}
+
+.acc-history__filter-group label {
+    font-size: 13px;
+    color: #666;
+    font-weight: 500;
+}
+
+.acc-history__dropdown {
+    position: relative;
+    width: 100%;
+}
+
+.acc-history__dropdown-btn {
+    width: 100%;
+    padding: 7px 12px;
+    background: white;
+    border: 1px solid rgba(217, 217, 217, 1);
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    transition: border-color 0.2s;
+    min-height: 40px;
+    position: relative;
+}
+
+.acc-history__dropdown-btn:hover {
+    border-color: #999;
+}
+
+.acc-history__dropdown-label {
+    font-weight: 400;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.acc-history__dropdown-label.hidden {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.acc-history__dropdown-value {
+    font-weight: 500;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.2s, transform 0.2s;
+    pointer-events: none;
+}
+
+.acc-history__dropdown-value.visible {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+.acc-history__dropdown-arrow {
+    margin-left: 8px;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+}
+.acc-history__dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-top: 2px;
+    padding: 4px 0 4px 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    &::-webkit-scrollbar {
+        width: 4px;
+        height: 6px;
+    }
+
+
+    &::-webkit-scrollbar-track {
+        background: #F7F7F8;
+    }
+
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #E1E1E5;
+    }
+}
+
+.acc-history__dropdown-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.15s;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.acc-history__dropdown-item:hover {
+    background-color: #f0f0f0;
+}
+
+.acc-history__dropdown-item.active {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.acc-history__date-filter {
+    position: relative;
+}
+
+.acc-history__date-btn {
+    width: 100%;
+    padding: 8px 12px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    transition: all 0.2s;
+    min-height: 40px;
+    position: relative;
+}
+.acc-history__date-btn:hover {
+    border-color: #999;
+}
+.acc-history__date-btn .acc-history__dropdown-label {
+    color: rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+}
+
+.acc-history__date-btn .acc-history__dropdown-label.hidden {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.acc-history__calendar {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-top: 4px;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    min-width: 280px;
+}
+
+.acc-history__calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 8px;
+}
+
+.acc-history__calendar-nav-group {
+    display: flex;
+    gap: 2px;
+}
+
+.acc-history__calendar-month {
+    font-weight: 600;
+    font-size: 14px;
+    flex: 1;
+    text-align: center;
+}
+
+.acc-history__calendar-nav {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    border-radius: 4px;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.acc-history__calendar-main{
+    padding: 8px 18px;
+}
+.acc-history__calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.acc-history__calendar-weekday {
+    text-align: center;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.acc-history__calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.acc-history__calendar-day {
+    text-align: center;
+    padding: 3px 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.2s;
+
+    span{
+        display: block;
+        width: 24px;
+        height: 24px;
+        border-radius: 6px;
+        border: 1px solid transparent;
+    }
+}
+
+.acc-history__calendar-day.empty {
+    cursor: default;
+}
+
+.acc-history__calendar-day:not(.empty):hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.acc-history__calendar-day.selected {
+    background-color: variables.$AdditionalColorText;
+    color: white;
+}
+
+.acc-history__calendar-day.today {
+    span{
+        border-color: variables.$AdditionalColorText;
+    }
+}
+
+.acc-history__calendar-day.in-range {
+    background-color: rgba(215, 255, 214, 1);
+}
+
+.acc-history__calendar-day.range-start {
+    background-color: variables.$AdditionalColorText;
+    color: white;
+    border-radius: 4px 0 0 4px;
+}
+
+.acc-history__calendar-day.range-end {
+    background-color: variables.$AdditionalColorText;
+    color: white;
+    border-radius: 0 4px 4px 0;
+}
+
+.acc-history__calendar-day.range-start.range-end {
+    border-radius: 4px;
+}
+
+.acc-history__calendar-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 9px 8px;
+    border-top: 1px solid #eee;
+}
+
+.acc-history__calendar-reset,
+.acc-history__calendar-apply {
+    padding: 6px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.acc-history__calendar-reset {
+    background: #f0f0f0;
+    color: #666;
+}
+
+.acc-history__calendar-reset:hover {
+    background: #e0e0e0;
+}
+
+.acc-history__calendar-apply {
+    background: variables.$AdditionalColorText;
+    color: white;
+}
+.acc-history__empty {
+    text-align: center;
+    padding: 40px 0;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .acc-history__filters {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px;
+    }
+
+    .acc-history__filter-group {
+        min-width: 100%;
+    }
+
+    .acc-history__calendar {
+        left: -10px;
+        right: -10px;
+        min-width: auto;
+    }
+}

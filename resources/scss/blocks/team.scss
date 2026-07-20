@@ -1,0 +1,62 @@
+@use "/resources/scss/common/variables";
+
+.team{
+    &__items{
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 25px;
+        row-gap: 30px;
+    }
+
+    &__item{
+        width: 100%;
+        border-radius: 20px;
+        background: #EBEBEB;
+        padding: 40px;
+
+        &-title{
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 17px;
+        }
+
+        p{
+            font-size: 18px;
+            line-height: 138%;
+            margin-bottom: 5px;
+            color: variables.$SecondColorText;
+        }
+    }
+    &__item:first-child{
+        width: calc(50% - 13px);
+        background: variables.$AdditionalColorText;
+        color: #FFFFFF;
+
+        p{
+            color: #FFFFFF;
+        }
+    }
+    &__item:nth-child(2){
+        width: calc(50% - 13px);
+        background: variables.$AdditionalColorText;
+        color: #FFFFFF;
+
+        p{
+            color: #FFFFFF;
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    .team__item:first-child,
+    .team__item:nth-child(2){
+        width: 100%;
+    }
+}
+@media (max-width: 576px) {
+    .team__item{
+        padding: 20px;
+    }
+
+}

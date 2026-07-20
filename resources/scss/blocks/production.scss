@@ -1,0 +1,83 @@
+@use "/resources/scss/common/variables";
+
+.production{
+    &__content{
+        max-width: 1156px;
+        margin-bottom: 30px;
+
+        p{
+            font-size: 18px;
+            font-weight: 500;
+            color: variables.$SecondColorText;
+        }
+    }
+
+    &__list{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 25px;
+        row-gap: 30px;
+    }
+
+    &__item{
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        aspect-ratio: 1/1.4;
+
+        &-img,
+        &-video{
+            width: 100%;
+            height: 100%;
+        }
+        img, video{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .video-play-btn{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+
+            svg{
+                cursor: pointer;
+                transition: variables.$time;
+
+                &:focus{
+                    outline: none;
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        &-title{
+            width: 100%;
+            height: 110px;
+            position: absolute;
+            bottom: 0;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.14);
+            backdrop-filter: blur(8px);
+            color: #FFFFFF;
+            font-size: 18px;
+            font-weight: 500;
+            z-index: 2;
+
+
+            span{
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+        }
+    }
+}

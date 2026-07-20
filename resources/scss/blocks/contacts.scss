@@ -1,0 +1,143 @@
+@use "/resources/scss/common/variables";
+
+.contacts{
+    padding-top: 30px;
+    &__sales{
+        h4{
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 22px;
+        }
+
+        ul{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 24px;
+            padding: 0;
+            margin-bottom: 40px;
+
+            li{
+                border-radius: 18px;
+                padding: 24px;
+                background: rgba(0, 0, 0, 0.04);
+                border: 1px solid rgba(0, 0, 0, 0.06);
+                font-size: 20px;
+                font-weight: 700;
+                margin-bottom: 0;
+
+                a{
+                    display: flex;
+                    align-items: center;
+                    gap: 14px;
+                    margin-top: 12px;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 22px;
+                    color: variables.$AdditionalColorText;
+
+                    &::before{
+                        content: '';
+                        width: 36px;
+                        height: 36px;
+                        background: no-repeat 0 0/ 100% url("/public/images/email-ico.svg");
+                    }
+                }
+                .phone{
+                    white-space: nowrap;
+                }
+                .phone::before{
+                    background: no-repeat 0 0/ 100% url("/public/images/phone-ico.svg");
+                }
+            }
+        }
+    }
+    &__content{
+        position: relative;
+        padding: 24px;
+        border-radius: 20px;
+        overflow: hidden;
+        min-height: 665px;
+        margin-bottom: 60px;
+
+        #map{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            filter: grayscale(10);
+        }
+    }
+    &__info{
+        background: #FFFFFF;
+        border-radius: 20px;
+        padding: 32px;
+        max-width: 431px;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        position: relative;
+
+        span{
+            font-size: 14px;
+            line-height: 22px;
+            color: rgba(0, 0, 0, 0.45);
+            display: block;
+            margin-bottom: 2px;
+        }
+        p{
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 600;
+            color: variables.$MainColorText;
+        }
+
+        a{
+            padding: 5px 0;
+            font-size: 14px;
+            line-height: 22px;
+            color: variables.$AdditionalColorText;
+        }
+
+        .slogan p{
+            font-weight: 400;
+        }
+    }
+
+    &__emails{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    .email{
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+    &_socials{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 12px;
+    }
+}
+.map-links{
+    display: flex;
+    gap: 16px;
+    margin-top: 8px;
+
+    a{
+        width: 44px;
+        height: 44px;
+
+        svg{
+            width: 100%;
+        }
+    }
+}
+.phone-items{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 8px;
+}

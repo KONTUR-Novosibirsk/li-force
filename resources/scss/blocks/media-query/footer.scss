@@ -1,0 +1,23 @@
+@use "/resources/scss/common/variables";
+
+@media (max-width: 1400px) {
+}
+
+@media (max-width: 1190px) {
+    .footer_top{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer_top{
+        gap: 40px;
+        padding: 50px 0 32px;
+    }
+    .footer__contacts h6,
+    .footer-phone,
+    .footer-email{
+        margin-bottom: 20px;
+    }
+}
+

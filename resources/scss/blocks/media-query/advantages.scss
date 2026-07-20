@@ -1,0 +1,13 @@
+
+@media (max-width: 900px) {
+    .advantages_list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .advantages_list {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}

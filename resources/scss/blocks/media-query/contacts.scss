@@ -1,0 +1,44 @@
+@media (max-width: 1150px) {
+    .contacts__sales ul{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media (max-width: 990px) {
+    .contacts__content{
+        padding: 20px;
+    }
+}
+@media (max-width: 768px) {
+    .contacts__sales ul{
+        grid-template-columns: repeat(1,1fr);
+        gap: 12px;
+    }
+    .contacts__content{
+        padding: 0;
+        border-radius: 0;
+        overflow: visible;
+
+        #map{
+            position: static;
+            width: 100vw;
+            height: 560px;
+            margin-left: -15px;
+        }
+    }
+}
+@media (max-width: 576px) {
+    .contacts__content{
+        margin-bottom: 40px;
+    }
+    .contacts__info{
+        padding: 0;
+        margin-top: 24px;
+    }
+
+    .contacts_socials{
+        grid-template-columns: repeat(6, 38px);
+        a{
+            height: 38px;
+        }
+    }
+}

@@ -1,0 +1,30 @@
+@use "/resources/scss/common/variables";
+
+.resent-products{
+    padding-bottom: 203px;
+
+    &__title{
+        font-size: 32px;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    &__list{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 25px;
+    }
+}
+
+
+@media (max-width: 1400px) {
+    .resent-products__list{
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+}
+@media (max-width: 1100px) {
+    .resent-products__list{
+        gap: 8px;
+    }
+}
